@@ -1,0 +1,41 @@
+/* terms service info tab styles */
+
+.terms-service-info-tabset {
+  @extend %listreset;
+  font: 700 10px/1.2 $base-font-sans-serif;
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 1px solid rgba($white, .5);
+  padding: 0 0 20px;
+
+  @include media("<desktop") {
+    padding: 0 0 15px;
+  }
+
+  li {
+    &:not(:last-child) {
+      margin: 0 10px 0 0;
+    }
+  }
+
+  a {
+    color: $white;
+
+    &:hover,
+    &:focus {
+      color: rgba($white, .5);
+    }
+  }
+}
+
+/* terms service info tab content styles */
+
+.terms-service-info-tab-content {
+  border-bottom: 1px solid rgba($white, .5);
+  padding: 10px 0;
+  margin: 0 0 15px;
+
+  @include media("<desktop") {
+    margin: 0 0 10px;
+  }
+}

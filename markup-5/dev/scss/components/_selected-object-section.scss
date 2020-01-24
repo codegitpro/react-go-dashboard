@@ -1,0 +1,88 @@
+/* selected object section styles */
+
+.selected-object-section {
+  > .container {
+    max-width: 1260px;
+  }
+
+  .content-holder {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+  }
+
+  .sidebar {
+    background: $blue;
+    width: 266px;
+    padding: 135px 25px;
+    margin: 0 20px 0 0;
+
+    @include media("<desktop") {
+      width: 240px;
+      padding: 70px 20px;
+      margin: 0 15px 0 0;
+    }
+
+    @include media("<tablet") {
+      width: 100%;
+      margin: 0 0 25px;
+      padding: 25px 20px;
+    }
+  }
+
+  .content {
+    margin: 0;
+    padding: 100px 0 150px;
+    line-height: normal;
+
+    @include media("<desktop") {
+      padding: 50px 0 75px;
+    }
+
+    @include media("<tablet") {
+      padding: 25px 0 80px;
+    }
+  }
+
+  h1 {
+    margin: 0 0 35px;
+
+    @include media("<desktop") {
+      margin: 0 0 25px;
+    }
+
+    @include media("<tablet") {
+      margin: 0 0 20px;
+    }
+  }
+
+  .object-list {
+    margin: 0 -5px;
+
+    @include media("<phone") {
+      margin: 0;
+    }
+
+    > li {
+      flex: 0 0 25%;
+      max-width: 25%;
+      padding: 0 5px 50px;
+
+      @include media("<widescreen") {
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+      }
+
+      @include media("<desktop") {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+
+      @include media("<phone") {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0 0 50px;
+      }
+    }
+  }
+}

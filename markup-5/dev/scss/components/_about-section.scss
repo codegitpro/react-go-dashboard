@@ -1,0 +1,46 @@
+/* about section styles */
+
+.about-section {
+  padding: 70px 0;
+  background: rgba($gray-light, .5);
+
+  @include media("<desktop") {
+    padding: 45px 0;
+  }
+
+  > .container {
+    max-width: 690px;
+  }
+
+  .header-section {
+    margin: 0 0 30px;
+  }
+
+  .item-list {
+    @extend %listreset;
+    font: 400 14px/1.2 $base-font-sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    li {
+      position: relative;
+      margin: 0 0 5px;
+
+      &:not(:last-child) {
+        padding-right: 30px;
+      }
+    }
+
+    [class^="icon-"],
+    [class*=" icon-"] {
+      font-size: 12px;
+      position: absolute;
+      top: 50%;
+      right: 8px;
+      transform: translateY(-50%);
+      color: $orange;
+    }
+  }
+}

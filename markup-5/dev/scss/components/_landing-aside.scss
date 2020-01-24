@@ -1,0 +1,24 @@
+/* landing aside styles */
+
+.landing-aside {
+  width: 290px;
+  flex-shrink: 0;
+
+  @include media("<desktop") {
+    width: 230px;
+  }
+
+  @include media("<tablet") {
+    width: 100%;
+  }
+
+  .landing-aside-block {
+    &:not(:last-child) {
+      margin: 0 0 30px;
+
+      @include media("<desktop") {
+        margin: 0 0 20px;
+      }
+    }
+  }
+}

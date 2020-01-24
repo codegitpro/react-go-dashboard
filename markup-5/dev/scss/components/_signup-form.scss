@@ -1,0 +1,97 @@
+/* sign up form styles */
+
+.signup-form {
+  .row-form {
+    display: flex;
+    flex-wrap: wrap;
+
+    &:not(:last-child) {
+      margin: 0 0 10px;
+    }
+  }
+
+  .col-form {
+    flex: 0 0 50%;
+    max-width: 50%;
+
+    &:only-child {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+
+    &:first-child {
+      &:not(:only-child) {
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+          border-right-color: transparent;
+          border-radius: 2px 0 0 2px;
+        }
+      }
+    }
+
+    &:last-child {
+      &:not(:only-child) {
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+          border-radius: 0 2px 2px 0;
+        }
+      }
+    }
+  }
+
+  label {
+    display: block;
+    font: 700 11px/1.2 $base-font-sans-serif;
+    margin: 0 0 5px;
+    color: $black;
+  }
+
+  .input-holder {
+    position: relative;
+
+    [class^="icon-"],
+    [class*=" icon-"] {
+      font-size: 10px;
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      color: $gray;
+    }
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    font-size: 10px;
+    background: transparent;
+    height: 30px;
+    border-color: $gray;
+    padding: 5px 8px;
+    @include animate(box-shadow, .2s, linear);
+
+    &:focus {
+      box-shadow: 0 0 9px 0 rgba($gray, .28);
+    }
+  }
+
+  .custom-checkbox {
+    margin: 5px 0 0 10px;
+
+    @include media("<phone") {
+      margin: 0 0 0 10px;
+    }
+  }
+
+  input[type="password"] {
+    padding: 5px 25px;
+  }
+
+  input[type="submit"] {
+    font: 500 11px/1.2 $secondary-font-sans-serif;
+    min-width: 100%;
+    padding: 10px;
+  }
+}

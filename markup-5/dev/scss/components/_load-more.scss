@@ -1,0 +1,36 @@
+/* load more wrap styles */
+
+.load-more-wrap {
+  text-align: center;
+  padding: 10px 0 0;
+
+  @include media("<phone") {
+    padding: 25px 0 0;
+  }
+}
+
+/* load more styles */
+
+.load-more {
+  font: 400 14px/1.2 $base-font-sans-serif;
+  letter-spacing: normal;
+  color: $black;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  padding: 0 0 30px;
+
+  &:hover,
+  &:focus {
+    color: $blue;
+  }
+
+  [class^="icon-"],
+  [class*=" icon-"] {
+    font-size: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) rotate(90deg);
+  }
+}

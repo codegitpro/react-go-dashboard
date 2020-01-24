@@ -1,0 +1,41 @@
+/* sub title styles */
+
+.sub-title {
+  font-size: 32px;
+  position: relative;
+  padding: 0 0 0 55px;
+  margin: 0 0 35px;
+
+  @include media("<desktop") {
+    font-size: 26px;
+  }
+
+  @include media("<phone") {
+    font-size: 22px;
+    padding: 0 0 0 45px;
+    margin: 0 0 25px;
+  }
+
+  [class^="icon-"],
+  [class*=" icon-"] {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 48px;
+    color: $blue;
+
+    @include media("<desktop") {
+      font-size: 30px;
+    }
+
+    @include media("<phone") {
+      font-size: 28px;
+    }
+  }
+
+  mark {
+    color: $orange;
+    background: transparent;
+  }
+}

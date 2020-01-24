@@ -1,0 +1,40 @@
+/* open close styles */
+
+.open-close {
+  &.active {
+    .opener {
+      [class^="icon-"],
+      [class*=" icon-"] {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+
+  .opener-holder {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .opener {
+    font: 700 14px/1.2 $base-font-sans-serif;
+    color: $black;
+    letter-spacing: normal;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      color: $blue;
+    }
+
+    [class^="icon-"],
+    [class*=" icon-"] {
+      font-size: 8px;
+      margin: 0 0 0 5px;
+    }
+  }
+
+  .slide {
+    padding: 10px 0;
+  }
+}

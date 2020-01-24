@@ -1,0 +1,59 @@
+/* compare list styles */
+
+.compare-list {
+  @extend %listreset;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+
+  @include media("<widescreen") {
+    margin: 0 -10px;
+  }
+
+  @include media("<phone") {
+    margin: 0;
+  }
+
+  > li {
+    flex: 0 0 25%;
+    max-width: 25%;
+    padding: 0 15px 30px;
+    position: relative;
+
+    @include media("<widescreen") {
+      padding: 0 10px 25px;
+    }
+
+    @include media("<desktop") {
+      flex: 0 0 33.33%;
+      max-width: 33.33%;
+    }
+
+    @include media("<tablet") {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+
+    @include media("<phone") {
+      flex: 0 0 100%;
+      max-width: 100%;
+      padding: 0 0 25px;
+    }
+  }
+
+  .counter {
+    font: 700 12px/1.2 $base-font-sans-serif;
+    color: $white;
+    top: 0;
+    left: 5px;
+    position: absolute;
+
+    @include media("<widescreen") {
+      left: 0;
+    }
+
+    @include media("<phone") {
+      left: -10px;
+    }
+  }
+}

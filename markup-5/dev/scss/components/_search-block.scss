@@ -1,0 +1,60 @@
+/* search block styles */
+
+.search-block {
+  position: absolute;
+  right: 60px;
+  bottom: -35px;
+  display: flex;
+  z-index: 10;
+
+  @include media("<tablet") {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    flex-direction: column;
+    background: rgba($blue, .9);
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    @include animate(opacity visibility, .2s, linear);
+  }
+
+  .search-block-open & {
+    @include media("<tablet") {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .search-form {
+    width: 240px;
+
+    @include media("<desktop") {
+      width: 200px;
+    }
+
+    @include media("<tablet") {
+      width: 100%;
+    }
+  }
+
+  .btn {
+    min-width: 255px;
+
+    @include media("<desktop") {
+      min-width: 200px;
+    }
+
+    @include media("<tablet") {
+      display: none;
+    }
+
+    &:hover,
+    &:focus {
+      background: $white;
+    }
+  }
+}

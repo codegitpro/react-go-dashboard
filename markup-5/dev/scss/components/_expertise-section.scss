@@ -1,0 +1,32 @@
+/* expertise section styles */
+
+.expertise-section {
+  padding: 85px 0;
+  background: rgba($gray-light, .5);
+
+  @include media("<desktop") {
+    padding: 45px 0;
+  }
+
+  > .container {
+    max-width: 650px;
+  }
+
+  .header-section {
+    margin: 0 0 25px;
+  }
+
+  .expertise-text {
+    font: 300 14px/1.7 $base-font-sans-serif;
+    text-align: center;
+    margin: 0 0 45px;
+
+    @include media("<desktop") {
+      margin: 0 0 30px;
+    }
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+}

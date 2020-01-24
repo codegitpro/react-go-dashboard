@@ -1,0 +1,29 @@
+/* statistics list styles */
+
+.statistics-list {
+  @extend %listreset;
+  font: 300 12px/1.5 $base-font-sans-serif;
+
+  li {
+    &:not(:last-child) {
+      margin: 0 0 25px;
+
+      @include media("<tablet") {
+        margin: 0 0 5px;
+      }
+    }
+  }
+
+  .number {
+    font-size: 54px;
+    text-transform: uppercase;
+    color: $blue;
+    margin: 0 0 -5px;
+    display: block;
+
+    > span {
+      font-weight: 300;
+      font-family: $additional-font-sans-serif;
+    }
+  }
+}

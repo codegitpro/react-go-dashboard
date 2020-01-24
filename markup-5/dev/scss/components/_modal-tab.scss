@@ -1,0 +1,48 @@
+/* modal tabset styles */
+
+.modal-tabset {
+  @extend %listreset;
+  font: 300 20px/1.2 $base-font-sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+
+  @include media("<tablet") {
+    font-size: 18px;
+  }
+
+  @include media("<phone") {
+    font-size: 16px;
+  }
+
+  li {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    flex: 0 0 50%;
+    max-width: 50%;
+
+    &.active,
+    &:hover {
+      a {
+        background: $white;
+        color: $blue;
+      }
+    }
+  }
+
+  a {
+    background: rgba($blue, .5);
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    padding: 19px 10px;
+    @include animate(background color, .2s, linear);
+
+    @include media("<tablet") {
+      padding: 15px 10px;
+    }
+  }
+}

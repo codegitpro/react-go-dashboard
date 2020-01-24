@@ -1,0 +1,13 @@
+/* read more styles */
+
+.read-more {
+  font: 400 18px/1.2 $base-font-sans-serif;
+  color: $black;
+  display: inline-block;
+  vertical-align: top;
+
+  &:hover,
+  &:focus {
+    color: $blue;
+  }
+}

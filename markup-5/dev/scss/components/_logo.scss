@@ -1,0 +1,19 @@
+/* logo styles */
+
+.logo {
+  @include media("<desktop") {
+    width: 100px;
+  }
+
+  @include media("<tablet") {
+    width: 90px;
+  }
+
+  > a {
+    display: block;
+  }
+
+  img {
+  vertical-align: top;
+  }
+}

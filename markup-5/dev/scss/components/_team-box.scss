@@ -1,0 +1,26 @@
+/* team box styles */
+
+.team-box {
+  padding: 40px 0 0;
+
+  @include media("<tablet") {
+    padding: 0;
+  }
+
+  h2 {
+    font: 300 32px/1.2 $secondary-font-sans-serif;
+    margin: 0 0 30px;
+
+    @include media("<desktop") {
+      margin: 0 0 20px;
+    }
+  }
+
+  .team-list {
+    max-width: 585px;
+
+    @include media("<tablet") {
+      max-width: 100%;
+    }
+  }
+}

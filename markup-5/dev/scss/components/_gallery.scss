@@ -1,0 +1,194 @@
+/* gallery wrap styles */
+
+.gallery-wrap {
+  margin: 0 0 60px;
+
+  @include media("<phone") {
+    margin: 0 0 30px;
+  }
+}
+
+/* gallery styles */
+
+.gallery {
+  display: flex;
+  overflow: hidden;
+
+  @include media("<desktop") {
+    display: block;
+  }
+
+  .slideset {
+    flex: 1;
+    padding: 0 30px 0 0;
+
+    @include media("<widescreen") {
+      padding: 0 10px 0 0;
+    }
+
+    @include media("<desktop") {
+      padding: 0;
+    }
+  }
+
+  .slide {
+    @include media("<desktop") {
+      margin: 0 0 10px;
+    }
+  }
+
+  .slide-inner {
+    padding-bottom: 74%;
+    position: relative;
+    overflow: hidden;
+    margin: 0 0 5px;
+
+    @include media("<widescreen") {
+      padding-bottom: 51.8%;
+    }
+
+    @include media("<desktop") {
+      padding-bottom: 50%;
+    }
+
+    > img {
+      @include vertical-align-el;
+      width: 100%;
+    }
+  }
+
+  .gallery-view {
+    font: 700 12px/1.2 $base-font-sans-serif;
+    color: $black;
+    background: $white;
+    display: flex;
+    align-items: center;
+    border: 1px solid transparent;
+    padding: 10px 15px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 2;
+    @include animate(color border-color background, .2s, linear);
+
+    @include media("<phone") {
+      font-size: 10px;
+      right: 10px;
+      bottom: 10px;
+      padding: 8px 10px;
+    }
+
+    &:hover,
+    &:focus {
+      border-color: $black;
+      background: $black;
+      color: $white;
+    }
+
+    [class^="icon-"],
+    [class*=" icon-"] {
+      font-size: 10px;
+      margin: 0 10px 0 0;
+
+      @include media("<phone") {
+        font-size: 8px;
+        margin: 0 5px 0 0;
+      }
+    }
+  }
+
+  .pagination {
+    width: 173px;
+    flex-shrink: 0;
+
+    @include media("<widescreen") {
+      width: 120px;
+      flex-shrink: 1;
+    }
+
+    @include media("<desktop") {
+      width: 100%;
+    }
+
+    ul {
+      @extend %listreset;
+
+      @include media("<desktop") {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -5px;
+      }
+    }
+
+    li {
+      @include media("<desktop") {
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+        padding: 0 5px;
+      }
+
+      &:not(:last-child) {
+        margin: 0 0 20px;
+
+        @include media("<widescreen") {
+          margin: 0 0 10px;
+        }
+
+        @include media("<desktop") {
+          margin: 0;
+        }
+      }
+    }
+
+    a {
+      display: block;
+
+      > img {
+        width: 100%;
+        display: block;
+      }
+    }
+  }
+
+  .gallery-panel {
+    font: 700 12px/1.2 $base-font-sans-serif;
+    color: $gray;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include media("<phone") {
+      font-size: 10px;
+    }
+
+    ul {
+      @extend %listreset;
+      display: flex;
+      align-items: center;
+
+      li {
+        display: flex;
+        align-items: center;
+
+        &:not(:last-child) {
+          margin: 0 10px 0 0;
+        }
+      }
+
+      a {
+        color: $gray;
+
+        &:hover,
+        &:focus {
+          color: $blue;
+        }
+      }
+
+      [class^="icon-"],
+      [class*=" icon-"] {
+        font-size: 12px;
+        margin: 0 5px 0 0;
+      }
+    }
+  }
+}

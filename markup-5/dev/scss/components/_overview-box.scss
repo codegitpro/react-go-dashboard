@@ -1,0 +1,149 @@
+/* overview box styles */
+
+.overview-box {
+  background: $blue;
+  color: $white;
+  border-radius: 2px;
+  padding: 20px 30px;
+
+  @include media("<desktop") {
+    padding: 15px 10px;
+  }
+
+  .overview-box-top {
+    text-align: right;
+  }
+
+  .overview-title {
+    font: 700 18px/1.2 $base-font-sans-serif;
+    display: block;
+    color: $white;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 0 30px;
+
+    @include media("<desktop") {
+      margin: 0 0 10px;
+    }
+  }
+
+  .range-wrap {
+    margin: 0 0 40px;
+
+    @include media("<desktop") {
+      margin: 0 0 20px;
+    }
+  }
+
+  .box {
+    &:not(:last-child) {
+      margin: 0 0 10px;
+    }
+  }
+
+  .number,
+  .text {
+    font: 400 14px/1.2 $base-font-sans-serif;
+    display: block;
+  }
+
+  .number {
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  .range {
+    position: relative;
+    height: 11px;
+    border-radius: 2px;
+    background: rgba($white, .5);
+    overflow: hidden;
+    margin: 0 0 15px;
+
+    > span {
+      border-radius: 2px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      background: $white;
+    }
+  }
+
+  .overview-box-middle {
+    margin: 0 0 25px;
+  }
+
+  .overview-dl {
+    font: 400 14px/1.2 $base-font-sans-serif;
+
+    > dt,
+    > dd {
+      padding: 0 0 15px;
+
+      @include media("<desktop") {
+        padding: 0 0 10px;
+      }
+    }
+
+    > dt {
+      min-width: 130px;
+      padding-right: 10px;
+
+      > span {
+        display: flex;
+        align-items: flex-start;
+      }
+
+      [class^="icon-"],
+      [class*=" icon-"] {
+        font-size: 10px;
+      }
+    }
+
+    > dd {
+      line-height: 1.5;
+    }
+  }
+
+  .dropdown-holder {
+    display: flex;
+    align-items: center;
+  }
+
+  .object-dropdown-wrap {
+    > a {
+      color: $white;
+      margin: 0;
+
+      [class^="icon-"],
+      [class*=" icon-"] {
+        margin: 0;
+      }
+    }
+
+    .object-dropdown-holder {
+      transform: none;
+      left: 0;
+    }
+  }
+
+  .overview-box-bottom {
+    text-align: center;
+  }
+
+  .btn {
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    min-width: 142px;
+    padding: 11px 10px;
+
+    &.btn-success {
+      &:hover,
+      &:focus {
+        background: $white;
+      }
+    }
+  }
+}

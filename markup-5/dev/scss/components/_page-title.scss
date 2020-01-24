@@ -1,0 +1,13 @@
+/* page title styles */
+
+.page-title {
+  margin: 0 0 45px;
+
+  @include media("<desktop") {
+    margin: 0 0 25px;
+  }
+
+  > h1 {
+    max-width: 200px;
+  }
+}

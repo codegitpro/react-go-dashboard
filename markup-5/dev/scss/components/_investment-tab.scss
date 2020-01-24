@@ -1,0 +1,67 @@
+/* investment tabset styles */
+
+.investment-tabset {
+  @extend %listreset;
+  font: 700 14px/1.2 $base-font-sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 0 80px;
+
+  @include media("<widescreen") {
+    margin: 0 0 40px;
+  }
+
+  @include media("<tablet") {
+    margin: 0 0 20px;
+  }
+
+  @include media("<phone") {
+    display: block;
+  }
+
+  li {
+    padding: 0 20px;
+
+    @include media("<tablet") {
+      padding: 0 10px;
+    }
+
+    @include media("<phone") {
+      padding: 0;
+    }
+
+    &:not(:last-child) {
+      @include media("<phone") {
+        padding: 0 0 10px;
+      }
+    }
+
+    &.active,
+    &:hover {
+      a {
+        color: $blue;
+      }
+    }
+  }
+
+  a {
+    color: $black;
+    display: block;
+  }
+
+  .term,
+  .period {
+    display: block;
+  }
+
+  .term {
+    text-transform: uppercase;
+    margin: 0 0 2px;
+  }
+
+  .period {
+    font-size: 10px;
+  }
+}

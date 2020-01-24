@@ -1,0 +1,93 @@
+/* faq section styles */
+
+.faq-section {
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -40px;
+
+    @include media("<desktop") {
+      display: block;
+      margin: 0;
+    }
+  }
+
+  .col {
+    padding: 0 40px;
+
+    @include media("<desktop") {
+      padding: 0;
+    }
+
+    &:not(:first-child) {
+      flex: 1;
+    }
+
+    &:first-child {
+      width: 270px;
+
+      @include media("<desktop") {
+        padding: 0 0 20px;
+        width: auto;
+      }
+    }
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  h2 {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 15px 0;
+
+    @include media("<desktop") {
+      margin: 0 0 15px;
+    }
+  }
+
+  .faq-accordion {
+    padding: 80px 0 0;
+
+    @include media("<desktop") {
+      padding: 40px 0 0;
+    }
+
+    &:first-child {
+      padding: 5px 0 40px;
+
+      @include media("<desktop") {
+        padding: 0 0 40px;
+      }
+    }
+
+    &:nth-child(2n) {
+      position: relative;
+      padding: 70px 0;
+
+      @include media("<desktop") {
+        padding: 40px 0;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -9999px;
+        right: -9999px;
+        bottom: 0;
+        background: rgba($gray-light, .5);
+        z-index: -1;
+      }
+    }
+
+    &:only-child {
+      padding: 5px 0 0;
+
+      @include media("<desktop") {
+        padding: 0;
+      }
+    }
+  }
+}

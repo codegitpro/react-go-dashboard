@@ -1,0 +1,140 @@
+/* object info styles */
+
+.object-info {
+  font: 400 10px/1.2 $base-font-sans-serif;
+  background: $white;
+  color: $blue;
+  border-radius: 2px;
+  padding: 15px 25px;
+  position: relative;
+
+  @include media("<widescreen") {
+    padding: 10px 15px;
+  }
+
+  @include media("<desktop") {
+    padding: 7px 7px;
+  }
+
+  &:hover {
+    .btn {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .object-info-top {
+    padding: 0 0 5px;
+    margin: 0 0 10px;
+    border-bottom: 1px solid rgba($blue, .5);
+  }
+
+  .rating {
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    color: $orange;
+    text-transform: uppercase;
+
+    [class^="icon-"],
+    [class*=" icon-"] {
+      font-size: 12px;
+      margin: 0 0 0 5px;
+    }
+  }
+
+  .object-info-middle {
+    padding: 0 0 5px;
+    margin: 0 0 10px;
+    border-bottom: 1px solid rgba($blue, .5);
+  }
+
+  .range-wrap {
+    margin: 0 0 15px;
+
+    .box {
+      &:not(:last-child) {
+        margin: 0 0 10px;
+      }
+    }
+
+    .number,
+    .text {
+      display: block;
+    }
+
+    .number {
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .range {
+      height: 8px;
+      border-radius: 2px;
+      background: rgba($blue, .5);
+      position: relative;
+      overflow: hidden;
+      margin: 0 0 10px;
+
+      > span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        background: $blue;
+        border-radius: 2px;
+      }
+    }
+  }
+
+  dl {
+    dt {
+      min-width: 86px;
+    }
+
+    dt, dd {
+      font-size: 10px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+  }
+
+  .documents-list {
+    font-size: 10px;
+    font-weight: 400;
+
+    li {
+      &:not(:last-child) {
+        margin: 0;
+      }
+    }
+
+    a {
+      color: $blue;
+
+      &:hover,
+      &:focus {
+        color: $black;
+        transform: none;
+      }
+    }
+  }
+
+  .btn {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 106px;
+    padding: 10px 5px;
+    opacity: 0;
+    visibility: hidden;
+    @include animate(color background opacity visibility, .2s, linear);
+
+    &:hover,
+    &:focus {
+      background: $white;
+    }
+  }
+}

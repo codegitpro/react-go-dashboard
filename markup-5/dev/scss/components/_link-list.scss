@@ -1,0 +1,32 @@
+/* link list styles */
+
+.link-list {
+  @extend %listreset;
+  display: flex;
+  align-items: center;
+  font: 300 12px/1.2 $base-font-sans-serif;
+  letter-spacing: normal;
+
+  li {
+    &:not(:last-child) {
+      margin: 0 15px 0 0;
+    }
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    color: $blue;
+
+    &:hover,
+    &:focus {
+      color: $black;
+    }
+  }
+
+  [class^="icon-"],
+  [class*=" icon-"] {
+    font-size: 12px;
+    margin: 0 0 0 5px;
+  }
+}

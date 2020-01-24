@@ -1,0 +1,70 @@
+/* filters list styles */
+
+.filters-list {
+  @extend %listreset;
+
+  > li {
+    &:not(:last-child) {
+      margin: 0 0 10px;
+    }
+
+    &.active {
+      .filters-opener {
+        [class^="icon-"],
+        [class*=" icon-"] {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+
+  .filters-opener {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+
+    [class^="icon-"],
+    [class*=" icon-"] {
+      font-size: 8px;
+      color: $white;
+    }
+  }
+
+  .custom-checkbox {
+    input[type="checkbox"] {
+      & + label {
+        font-size: 14px;
+        font-weight: 300;
+        color: $white;
+
+        &:before {
+          @include size(10px);
+          border-radius: 2px;
+          background: $white;
+          border-color: $gray;
+          margin: 4px 6px 0 0;
+        }
+
+        &:after {
+          @include size(7px, 4px);
+          top: 6px;
+          border: 2px solid $blue;
+          border-width: 0 0 2px 2px;
+        }
+      }
+    }
+  }
+
+  ul {
+    @extend %listreset;
+    padding: 10px 0 10px 15px;
+
+    > li {
+      &:not(:last-child) {
+        margin: 0 0 10px;
+      }
+    }
+  }
+}

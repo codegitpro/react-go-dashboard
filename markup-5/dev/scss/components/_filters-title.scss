@@ -1,0 +1,13 @@
+/* filters title styles */
+
+.filters-title {
+  font: 700 14px/1.2 $base-font-sans-serif;
+  color: $white;
+  text-transform: uppercase;
+  display: block;
+  margin: 0 0 20px;
+
+  @include media("<desktop") {
+    margin: 0 0 15px;
+  }
+}

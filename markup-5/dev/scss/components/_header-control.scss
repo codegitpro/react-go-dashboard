@@ -1,0 +1,50 @@
+/* header control styles */
+
+.header-control {
+  @extend %listreset;
+  display: none;
+  align-items: center;
+
+  @include media("<tablet") {
+    display: flex;
+  }
+
+  li {
+    &:not(:last-child) {
+      margin: 0 20px 0 0;
+
+      @include media("<phone") {
+        margin: 0 15px 0 0;
+      }
+    }
+  }
+
+  a {
+    font-size: 30px;
+    display: block;
+    color: $white;
+
+    @include media("<phone") {
+      font-size: 25px;
+    }
+
+    &:hover,
+    &:focus {
+      color: rgba($white, .5);
+    }
+
+    .home & {
+      color: $blue;
+
+      &:hover,
+      &:focus {
+        color: rgba($blue, .5);
+      }
+    }
+  }
+
+  [class^="icon-"],
+  [class*=" icon-"] {
+    display: block;
+  }
+}

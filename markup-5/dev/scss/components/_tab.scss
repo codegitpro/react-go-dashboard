@@ -1,0 +1,37 @@
+/* tabset styles */
+
+.tabset {
+  @extend %listreset;
+  font: 400 14px/1.2 $base-font-sans-serif;
+  display: flex;
+  align-items: center;
+  margin: 0 0 40px;
+
+  @include media("<tablet") {
+    margin: 0 0 15px;
+  }
+
+  li {
+    &.active,
+    &:hover {
+      a {
+        color: $blue;
+        border-bottom-color: $blue;
+      }
+    }
+
+    &:not(:last-child) {
+      margin: 0 10px 0 0;
+    }
+  }
+
+  a {
+    border-bottom: 1px solid transparent;
+    color: $gray;
+    @include animate(color border-bottom-color, .2s, linear);
+  }
+}
+
+/* tab content styles */
+
+.tab-content {  }

@@ -1,0 +1,47 @@
+/* social link list styles */
+
+.social-link-list {
+  @extend %listreset;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  @include media("<desktop") {
+    margin: 0 -5px;
+  }
+
+  @include media("<tablet") {
+    max-width: 290px;
+  }
+
+  li {
+    &:not(:last-child) {
+      margin: 0 20px 0 0;
+
+      @include media("<desktop") {
+        margin: 0;
+        padding: 0 5px;
+      }
+    }
+
+    @include media("<desktop") {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+  }
+
+  a {
+    display: block;
+    @include animate(opacity, .2s, linear);
+
+    &:hover,
+    &:focus {
+      opacity: .8;
+    }
+  }
+
+  img {
+    width: 100%;
+    display: block;
+  }
+}

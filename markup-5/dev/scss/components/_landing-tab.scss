@@ -1,0 +1,63 @@
+/* landing tabset styles */
+
+.landing-tabset {
+  @extend %listreset;
+  font: 400 14px/1.2 $base-font-sans-serif;
+  text-align: center;
+  display: flex;
+  border-radius: 2px;
+  box-shadow: 0 0 13px 0 rgba($blue, .21);
+  margin: 0 0 60px;
+
+  @include media("<desktop") {
+    margin: 0 0 30px;
+  }
+
+  @include media("<tablet") {
+    font-size: 12px;
+  }
+
+  @include media("<phone") {
+    font-size: 14px;
+    display: block;
+  }
+
+  li {
+    flex: 1;
+
+    &.active,
+    &:hover {
+      a {
+        &:before {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+  a {
+    display: block;
+    padding: 25px 5px;
+    color: $black;
+    position: relative;
+
+    @include media("<phone") {
+      padding: 20px 5px;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 5px;
+      background: rgba($blue, .8);
+      border-radius: 2px;
+      opacity: 0;
+      visibility: hidden;
+      @include animate(opacity visibility, .2s, linear);
+    }
+  }
+}

@@ -1,0 +1,94 @@
+/* form styles */
+
+form,
+fieldset {
+  margin: 0;
+  padding: 0;
+  border-style: none;
+}
+
+input[type='text'],
+input[type='tel'],
+input[type='email'],
+input[type='search'],
+input[type='password'],
+//input[type='url'],
+// input[type='date'],
+textarea {
+  @include size(100%, 46px);
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  box-sizing: border-box;
+  font: 400 12px/1.2 $base-font-sans-serif;
+  border: 1px solid $form-element-border-color;
+  background: $form-element-background;
+  color: $form-element-color;
+  padding: $form-element-padding;
+  display: block;
+  border-radius: 2px;
+  outline: none;
+  letter-spacing: 0.05em;
+  @include animate(border-color, .2s, linear);
+
+  &:focus {
+    border-color: $form-element-focus-border-color;
+  }
+
+  @include placeholder {
+    color: $placeholder-color;
+  }
+}
+
+select {
+  -webkit-border-radius: 0;
+}
+
+textarea {
+  resize: vertical;
+  vertical-align: top;
+}
+
+input[type="search"]::-ms-clear,
+input[type="search"]::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+button,
+input[type='button'],
+input[type='reset'],
+input[type='file'],
+input[type='submit'] {
+  cursor: pointer;
+  outline: none;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+}
+
+input[type="submit"] {
+  font: 400 18px/1.2 $base-font-sans-serif;
+  background: $blue;
+  border: 1px solid $blue;
+  color: $white;
+  border-radius: 2px;
+  min-width: 164px;
+  padding: 12px 10px;
+  letter-spacing: 0.05em;
+  @include animate(border-color color background, .2s, linear);
+
+  &:hover,
+  &:focus {
+    border-color: $blue;
+    color: $blue;
+    background: transparent;
+  }
+}

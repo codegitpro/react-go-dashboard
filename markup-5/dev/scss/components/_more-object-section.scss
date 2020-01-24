@@ -1,0 +1,47 @@
+/* more object section styles */
+
+.more-object-section {
+  padding: 40px 0;
+  background: rgba($gray-light, .5);
+
+  > .container {
+    max-width: 980px;
+  }
+
+  .header-section {
+    margin: 0 0 30px;
+  }
+
+  .object-slider {
+    .slide {
+      @include media("<desktop") {
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+      }
+
+      @include media("<tablet") {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+
+      @include media("<phone") {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+
+      &:nth-child(2n) {
+        @include media("<phone") {
+          display: none;
+        }
+      }
+
+      &:nth-child(3n) {
+        display: block;
+
+        @include media("<tablet") {
+          display: none;
+        }
+      }
+    }
+  }
+}

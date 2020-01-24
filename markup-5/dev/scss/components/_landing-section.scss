@@ -1,0 +1,107 @@
+/* landing section styles */
+
+.landing-section {
+  padding: 20px 0 170px;
+
+  @include media("<desktop") {
+    padding: 20px 0 85px;
+  }
+
+  @include media("<tablet") {
+    padding: 20px 0 45px;
+  }
+
+  > .container {
+    max-width: 1117px;
+  }
+
+  .logo {
+    width: 92px;
+    margin: 0 19px 0 0;
+    flex-shrink: 0;
+
+    @include media("<desktop") {
+      width: 90px;
+      margin: 0 10px 0 0;
+    }
+  }
+
+  .tagline {
+    font: 300 18px/1.1 $secondary-font-sans-serif;
+
+    @include media("<desktop") {
+      font-size: 16px;
+    }
+  }
+
+  .project-name {
+    font-size: 32px;
+    font-weight: 700;
+    color: $blue;
+    position: relative;
+    padding: 0 0 10px;
+    margin: 0 0 10px;
+
+    @include media("<widescreen") {
+      font-size: 25px;
+    }
+
+    @include media("<phone") {
+      font-size: 24px;
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    &:after {
+      content: '';
+      height: 3px;
+      position: absolute;
+      right: 0;
+      left: 32%;
+      top: 100%;
+      background: $blue;
+
+      @include media("<phone") {
+        left: 0;
+      }
+    }
+  }
+
+  .location {
+    font: 300 18px/1.2 $base-font-sans-serif;
+    display: flex;
+    align-items: center;
+
+    [class^="icon-"],
+    [class*=" icon-"] {
+      font-size: 12px;
+      margin: 0 0 0 10px;
+    }
+  }
+
+  .objects-box {
+    img {
+      width: 100%;
+      display: block;
+      margin: 0 0 25px;
+
+      @include media("<desktop") {
+        margin: 0 0 15px;
+      }
+    }
+  }
+
+  .btn {
+    min-width: 100%;
+
+    &.btn-default {
+      border-color: $blue;
+
+      &:hover,
+      &:focus {
+        background: $blue;
+        color: $white;
+      }
+    }
+  }
+}

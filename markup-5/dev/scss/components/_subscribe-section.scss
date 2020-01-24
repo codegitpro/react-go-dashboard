@@ -1,0 +1,70 @@
+/* subscribe section styles */
+
+.subscribe-section {
+  padding: 90px 0;
+
+  @include media("<widescreen") {
+    padding: 65px 0;
+  }
+
+  @include media("<desktop") {
+    padding: 45px 0;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -20px;
+
+    @include media("<desktop") {
+      margin: 0 -10px;
+    }
+
+    @include media("<tablet") {
+      display: block;
+      margin: 0;
+    }
+  }
+
+  .col {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    padding: 0 20px;
+
+    @include media("<desktop") {
+      padding: 0 10px;
+    }
+
+    @include media("<tablet") {
+      flex: 0 0 100%;
+      max-width: 100%;
+      padding: 0;
+    }
+
+    &:not(:last-child) {
+      @include media("<tablet") {
+        padding: 0 0 50px;
+      }
+    }
+  }
+
+  h1 {
+    font-size: 36px;
+    margin: 0 0 35px;
+  }
+
+  .text {
+    font-size: 18px;
+    line-height: (30px/18px);
+  }
+
+  h2 {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 18px 0;
+
+    @include media("<tablet") {
+      margin: 0 0 18px;
+    }
+  }
+}

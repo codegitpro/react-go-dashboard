@@ -1,0 +1,66 @@
+/* hero block styles */
+
+.hero-block {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin: 0 0 55px;
+
+  @include media("<desktop") {
+    margin: 0 0 35px;
+  }
+
+  @include media("<phone") {
+    display: block;
+  }
+
+  &:last-child {
+    margin: 0;
+  }
+
+  .image {
+    width: 192px;
+    margin: 0 45px 0 0;
+
+    @include media("<desktop") {
+      margin: 0 25px 0 0;
+    }
+
+    @include media("<tablet") {
+      width: 100px;
+      margin: 0 15px 0 0;
+    }
+
+    @include media("<phone") {
+      width: 100%;
+      margin: 0 0 15px;
+    }
+  }
+
+  img {
+    width: 100%;
+    display: block;
+  }
+
+  .text {
+    flex: 1;
+    padding: 15px 0 0;
+
+    @include media("<tablet") {
+      padding: 0;
+    }
+  }
+
+  .signature {
+    max-width: 127px;
+
+    @include media("<tablet") {
+      max-width: 90px;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+}

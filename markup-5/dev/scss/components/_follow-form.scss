@@ -1,0 +1,28 @@
+/* follow form */
+
+.follow-form {
+  .form-title {
+    font: 300 24px/1.2 $secondary-font-sans-serif;
+    display: block;
+    margin: 0 0 10px;
+  }
+
+  .form-row {
+    display: flex;
+  }
+
+  input[type="email"] {
+    font: 300 12px/1.2 $secondary-font-sans-serif;
+    background: #ebebeb;
+    height: 43px;
+    flex: 1;
+    border-width: 1px 0 1px 1px;
+    border-radius: 2px 0 0 2px;
+
+  }
+
+  input[type="submit"] {
+    font: 400 12px/1.2 $secondary-font-sans-serif;
+    min-width: 73px;
+  }
+}

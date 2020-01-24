@@ -1,0 +1,14 @@
+/* chart section styles */
+
+.chart-section {
+  padding: 100px 0;
+
+  @include media("<desktop") {
+    padding: 45px 0;
+  }
+
+  img {
+    margin: 0 auto;
+    display: block;
+  }
+}

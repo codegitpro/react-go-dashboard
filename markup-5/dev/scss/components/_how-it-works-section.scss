@@ -1,0 +1,58 @@
+/* how it works section styles */
+
+.how-it-works-section {
+  margin: 0 0 80px;
+
+  @include media("<desktop") {
+    margin: 0 0 45px;
+
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -25px;
+
+    @include media("<desktop") {
+      display: block;
+      margin: 0;
+    }
+  }
+
+  .col {
+    padding: 0 25px;
+
+    @include media("<desktop") {
+      padding: 0;
+    }
+
+    &:first-child {
+      width: 230px;
+
+      @include media("<desktop") {
+        width: auto;
+        padding: 0 0 20px;
+      }
+    }
+
+    &:not(:first-child) {
+      flex: 1;
+    }
+  }
+
+  .faq-accordion {
+    .opener {
+      &:before {
+        top: 23px;
+      }
+    }
+
+    .slide {
+      padding: 10px 20px;
+    }
+  }
+
+  ol {
+    margin: 0 0 15px;
+  }
+}

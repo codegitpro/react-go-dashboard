@@ -1,0 +1,23 @@
+/* breadcrumbs styles */
+
+.breadcrumbs {
+  @extend %listreset;
+  font: 400 14px/1.2 $base-font-sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 0 15px;
+
+  li {
+    margin: 0 0 5px;
+
+    &:not(:last-child) {
+      margin-right: 5px;
+    }
+  }
+
+  a,
+  span {
+    display: block;
+  }
+}

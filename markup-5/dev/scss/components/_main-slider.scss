@@ -1,0 +1,134 @@
+/* main slider styles */
+
+.main-slider {
+  position: relative;
+
+  .slideset {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .slide {
+    display: flex;
+    align-items: center;
+    height: 730px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+
+    @include media("<desktop") {
+      height: 515px;
+    }
+  }
+
+  .container {
+    width: 100%;
+    max-width: $secondary-max-width;
+  }
+
+  .slide-content {
+    max-width: 550px;
+
+    @include media("<desktop") {
+      max-width: 415px;
+    }
+  }
+
+  h1 {
+    font-size: 48px;
+    line-height: (48px/48px);
+    color: $blue;
+    margin: 0 0 10px;
+
+    @include media("<desktop") {
+      font-size: 34px;
+    }
+  }
+
+  h2 {
+    font: 300 24px/1.2 $base-font-serif;
+    color: $blue;
+    margin: 0 0 30px;
+
+    @include media("<desktop") {
+      font-size: 17px;
+      margin: 0 0 15px;
+    }
+  }
+
+  .btn-list {
+    @extend %listreset;
+    display: flex;
+    align-items: center;
+
+    li {
+      &:not(:last-child) {
+        margin: 0 15px 0 0;
+      }
+    }
+
+    .btn {
+      min-width: 190px;
+
+      @include media("<desktop") {
+        font-size: 10px;
+        min-width: 134px;
+        padding: 10px;
+      }
+
+      @include media("<phone") {
+        min-width: 120px;
+      }
+
+      &.btn-default {
+        &:hover,
+        &:focus {
+          color: $white;
+          background: $blue;
+        }
+      }
+
+      &.btn-primary {
+        &:hover,
+        &:focus {
+          color: $blue;
+          background: $white;
+          border-color: $white;
+        }
+      }
+    }
+  }
+
+  .pagination {
+    position: relative;
+    margin: -20px 0 0;
+
+    ul {
+      @extend %listreset;
+      display: flex;
+      align-items: center;
+
+      li {
+        &.active,
+        &:hover {
+          a {
+            background: $white;
+          }
+        }
+
+        &:not(:last-child) {
+          margin: 0 5px 0 0;
+        }
+      }
+
+      a {
+        @include size(8px);
+        display: block;
+        border-radius: 50%;
+        overflow: hidden;
+        background: $gray;
+        @include animate(background, .2s, linear);
+      }
+    }
+  }
+}

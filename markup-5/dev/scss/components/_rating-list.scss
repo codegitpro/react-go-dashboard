@@ -1,0 +1,15 @@
+/* rating list styles */
+
+.rating-list {
+  @extend %listreset;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  color: $orange;
+
+  li {
+    &:not(:last-child) {
+      margin: 0 5px 0 0;
+    }
+  }
+}

@@ -1,0 +1,234 @@
+/* footer styles */
+
+.footer {
+  background: $blue;
+  padding: 40px 0;
+  letter-spacing: 0.05em;
+
+  @include media("<tablet") {
+    text-align: center;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    margin: 0 -15px -60px;
+
+    @include media("<widescreen") {
+      margin: 0 15px 30px;
+    }
+
+    @include media("<desktop") {
+      margin: 0 -10px -20px;
+    }
+
+    @include media("<tablet") {
+      margin: 0;
+    }
+  }
+
+  .col {
+    flex: 0 0 20%;
+    max-width: 20%;
+    padding: 0 15px 60px;
+
+    @include media("<widescreen") {
+      padding: 0 15px 30px;
+    }
+
+    @include media("<desktop") {
+      padding: 0 10px 20px;
+    }
+
+    @include media("<tablet") {
+      flex: 0 0 100%;
+      max-width: 100%;
+      padding: 0;
+    }
+
+    &:not(:last-child) {
+      @include media("<tablet") {
+        padding: 0 0 15px;
+      }
+    }
+  }
+
+  .footer-open-close {
+    &.active {
+      .title {
+        [class^="icon-"],
+        [class*=" icon-"] {
+          transform: rotate(90deg);
+        }
+      }
+
+      .slide {
+        display: block;
+      }
+    }
+  }
+
+  .title {
+    font: 700 16px/1.2 $base-font-sans-serif;
+    color: $white;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    margin: 0 0 20px;
+
+    @include media("<desktop") {
+      font-size: 14px;
+      margin: 0 0 10px;
+    }
+
+    @include media("<tablet") {
+      font-size: 16px;
+      justify-content: center;
+      cursor: pointer;
+      margin: 0;
+    }
+
+    [class^="icon-"],
+    [class*=" icon-"] {
+      font-size: 8px;
+      display: none;
+      margin: 0 0 0 5px;
+
+      @include media("<tablet") {
+        display: block;
+      }
+    }
+  }
+
+  .slide {
+    @include media("<tablet") {
+      display: none;
+      padding: 15px 0 0;
+    }
+  }
+
+  .item-list {
+    @extend %listreset;
+    font: 300 12px/1.5 $base-font-sans-serif;
+    color: $white;
+
+    li {
+      &:not(:last-child) {
+        margin: 0 0 5px;
+      }
+
+      &.active,
+      &:hover {
+        a {
+          color: rgba($white, .5);
+        }
+      }
+    }
+
+    a {
+      color: $white;
+    }
+  }
+
+  address {
+    font: 300 12px/1.5 $base-font-sans-serif;
+    color: $white;
+    display: block;
+  }
+
+  .contacts-list {
+    color: $white;
+    font-size: 12px;
+    line-height: 1.2;
+
+    li {
+      &:not(:last-child) {
+        margin: 0 0 5px;
+      }
+    }
+
+    .email {
+      a {
+        color: $white;
+        border-bottom-color: $white;
+
+        &:hover,
+        &:focus {
+          color: rgba($white, .5);
+          border-bottom-color: rgba($white, .5);
+        }
+      }
+    }
+  }
+
+  .social-networks {
+    margin: 0 0 10px;
+
+    @include media("<tablet") {
+      justify-content: center;
+    }
+  }
+
+  .subscribe-form {
+    position: relative;
+
+    input[type="email"] {
+      font-size: 10px;
+      color: $white;
+      background: transparent;
+      border: 1px solid $white;
+      height: 30px;
+      padding: 5px 30px 5px 8px;
+
+      &:focus {
+        border-color: rgba($white, .5);
+      }
+
+      @include placeholder {
+        color: inherit;
+      }
+    }
+
+    .submit {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 30px;
+      z-index: 1;
+
+      &:hover,
+      &:focus {
+        [class^="icon-"],
+        [class*=" icon-"] {
+          color: rgba($white, .5);
+        }
+      }
+    }
+
+    [class^="icon-"],
+    [class*=" icon-"] {
+      @include vertical-align-el;
+      color: $white;
+      font-size: 10px;
+      z-index: 1;
+      @include animate(color, .2s, linear);
+    }
+
+    input[type="submit"] {
+      @include size(30px);
+      min-width: 0;
+      background: transparent;
+      color: transparent;
+      border: none;
+      padding: 0;
+      font-size: 0;
+      line-height: 0;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 2;
+    }
+  }
+}

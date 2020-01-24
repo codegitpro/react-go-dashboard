@@ -1,0 +1,13 @@
+/* video bloc styles */
+
+.video-block {
+  position:relative;
+  padding-bottom: 56.25%;
+
+  iframe {
+    @include size(100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}

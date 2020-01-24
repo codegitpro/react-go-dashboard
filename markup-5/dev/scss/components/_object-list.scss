@@ -1,0 +1,40 @@
+/* object list styles */
+
+.object-list {
+  @extend %listreset;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+
+  @include media("<phone") {
+    margin: 0;
+  }
+
+  > li {
+    flex: 0 0 20%;
+    max-width: 20%;
+    padding: 0 10px 20px;
+
+    @include media("<widescreen") {
+      flex: 0 0 33.33%;
+      max-width: 33.33%;
+    }
+
+    @include media("<tablet") {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+
+    @include media("<phone") {
+      flex: 0 0 100%;
+      max-width: 100%;
+      padding: 0;
+    }
+
+    &:not(:last-child) {
+      @include media("<phone") {
+        padding: 0 0 20px;
+      }
+    }
+  }
+}

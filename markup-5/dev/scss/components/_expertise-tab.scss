@@ -1,0 +1,54 @@
+/* expertise tabset styles */
+
+.expertise-tabset {
+  @extend %listreset;
+  font: 700 14px/1.2 $base-font-sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0 0 40px;
+
+  @include media("<tablet") {
+    margin: 0 0 20px;
+  }
+
+  @include media("<phone") {
+    display: block;
+  }
+
+  li {
+    padding: 0 20px;
+
+    @include media("<tablet") {
+      padding: 0 10px;
+    }
+
+    @include media("<phone") {
+      padding: 0;
+    }
+
+    &:not(:last-child) {
+      @include media("<phone") {
+        padding: 0 0 10px;
+      }
+    }
+
+    &.active,
+    &:hover {
+      a {
+        color: $blue;
+      }
+    }
+  }
+
+  a {
+    display: block;
+    color: $black;
+  }
+}
+
+/* expertise tab styles */
+
+.expertise-tab-content {  }

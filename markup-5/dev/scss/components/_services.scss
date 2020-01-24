@@ -1,0 +1,27 @@
+/* services styles */
+
+.services {
+  a {
+    color: $black;
+    display: block;
+    padding: 0 0 15px;
+    border-bottom: 10px solid transparent;
+    @include animate(border-bottom-color, .2s, linear);
+
+    @include media("<phone") {
+      padding: 0;
+      border-bottom: none;
+    }
+
+    &:hover,
+    &:focus {
+      border-bottom-color: $blue;
+    }
+  }
+
+  .title-services {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0 0 20px;
+  }
+}

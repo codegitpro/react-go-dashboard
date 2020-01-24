@@ -1,0 +1,100 @@
+/* lists section styles */
+
+.lists-section {
+  padding: 100px 0;
+
+  @include media("<desktop") {
+    padding: 45px 0;
+  }
+
+  @include media("<phone") {
+    padding: 45px 0;
+  }
+
+  > .container {
+    max-width: 800px;
+  }
+
+  .item-list {
+    @extend %listreset;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 12px;
+    line-height: (18px/12px);
+    margin: 0 -25px;
+
+    @include media("<tablet") {
+      margin: 0 -5px;
+    }
+
+    @include media("<phone") {
+      display: block;
+      margin: 0;
+    }
+
+    li {
+      flex: 0 0 50%;
+      max-width: 50%;
+      display: flex;
+      align-items: flex-start;
+      padding: 0 25px 60px;
+
+      @include media("<desktop") {
+        padding: 0 25px 45px;
+      }
+
+      @include media("<tablet") {
+        padding: 0 5px 25px;
+      }
+
+      @include media("<phone") {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0;
+      }
+
+      &:not(:last-child) {
+        @include media("<phone") {
+          padding: 0 0 25px;
+        }
+      }
+    }
+
+    .image {
+      width: 60px;
+      position: relative;
+      display: flex;
+      flex-shrink: 0;
+      align-items: center;
+      justify-content: center;
+      margin: 0 15px 0 0;
+
+      @include media("<tablet") {
+        width: 30px;
+      }
+
+      > img {
+        display: block;
+      }
+    }
+
+    .text {
+      flex: 1;
+      padding: 25px 0 0;
+
+      @include media("<tablet") {
+        padding: 0;
+      }
+    }
+
+    .title {
+      font: 400 18px/1.2 $secondary-font-sans-serif;
+      margin: 0 0 15px;
+      text-transform: uppercase;
+
+      @include media("<tablet") {
+        font-size: 16px;
+      }
+    }
+  }
+}

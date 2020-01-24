@@ -1,0 +1,41 @@
+/* accordion section styles */
+
+.accordion-section {
+  padding: 80px 0;
+
+  @include media("<desktop") {
+    padding: 45px 0;
+  }
+
+  > .container {
+    max-width: 565px;
+  }
+
+  h1 {
+    font-size: 18px;
+    margin: 0 0 30px;
+
+    @include media("<desktop") {
+      margin: 0 0 20px;
+    }
+  }
+
+  .faq-accordion {
+    margin: 0 0 20px;
+
+    h2 {
+      font: 300 14px/1.2 $base-font-serif;
+      margin: 0;
+    }
+  }
+
+  .read-more {
+    font: 300 12px/1.2 $base-font-sans-serif;
+    color: $blue;
+
+    &:hover,
+    &:focus {
+      color: $black;
+    }
+  }
+}

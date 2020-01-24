@@ -1,0 +1,317 @@
+/* modal styles */
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba($blue, .8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 100;
+  @include animate(opacity visibility, .2s, linear);
+
+  @include media("<tablet") {
+    overflow-x: hidden;
+    overflow-y: auto;
+    align-items: flex-start;
+    flex-direction: row;
+  }
+
+  .modal-content {
+    position: relative;
+    background: $white;
+    max-width: 470px;
+    width: 100%;
+
+    @include media("<tablet") {
+      margin: 80px 20px;
+      max-width: 440px;
+    }
+
+    &.large {
+      max-width: 770px;
+      display: flex;
+      flex-wrap: wrap;
+
+      @include media("<desktop") {
+        max-width: 728px;
+      }
+
+      @include media("<tablet") {
+        display: block;
+        max-width: 440px;
+      }
+
+      .modal-col {
+        flex: 0 0 40%;
+        max-width: 40%;
+
+        @include media("<desktop") {
+          flex: 0 0 45%;
+          max-width: 45%;
+        }
+
+        @include media("<tablet") {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+
+        &:first-child {
+          flex: 0 0 60%;
+          max-width: 60%;
+
+          @include media("<desktop") {
+            flex: 0 0 55%;
+            max-width: 55%;
+          }
+
+          @include media("<tablet") {
+            flex: 0 0 100%;
+            max-width: 100%;
+          }
+        }
+
+        &:last-child {
+          display: flex;
+          flex-direction: column;
+        }
+
+        &:only-child {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+      }
+
+      .social-networks {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+        margin: 0 -5px -5px;
+
+        @include media("<phone") {
+          margin: 0;
+        }
+
+        li {
+          flex: 0 0 50%;
+          max-width: 50%;
+          padding: 0 5px 5px;
+          margin: 0;
+
+          @include media("<phone") {
+            flex: 0 0 100%;
+            max-width: 100%;
+            padding: 0;
+          }
+
+          &:not(:last-child) {
+            @include media("<phone") {
+              margin: 0 0 5px;
+            }
+          }
+        }
+      }
+
+      .terms-service-info {
+        flex: 1;
+      }
+    }
+
+    .modal-col {
+      &:last-child {
+        display: none;
+      }
+    }
+  }
+
+  .modal-close {
+    @include size(20px);
+    position: absolute;
+    top: -25px;
+    right: -25px;
+
+    @include media("<desktop") {
+      right: -20px;
+    }
+
+    @include media("<tablet") {
+      right: -15px;
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      background: $white;
+      top: 10px;
+      left: 5px;
+      right: 5px;
+      height: 2px;
+      transform: rotate(45deg);
+      @include animate(background, .2s, linear);
+    }
+
+    &:after {
+      transform: rotate(-45deg);
+    }
+
+    &:hover,
+    &:focus {
+      &:before,
+      &:after {
+        background: rgba($white, .5);
+      }
+    }
+  }
+
+  .modal-body {
+    padding: 50px 40px;
+
+    @include media("<desktop") {
+      padding: 35px 20px;
+    }
+
+    @include media("<tablet") {
+      padding: 25px 15px;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -20px;
+
+      @include media("<desktop") {
+        margin: 0 -15px;
+      }
+
+      @include media("<tablet") {
+        margin: 0 -10px;
+      }
+
+      @include media("<phone") {
+        display: block;
+        margin: 0;
+      }
+    }
+
+    .col {
+      flex: 0 0 50%;
+      max-width: 50%;
+      padding: 0 20px;
+
+      @include media("<desktop") {
+        padding: 0 15px;
+      }
+
+      @include media("<tablet") {
+        padding: 0 10px;
+      }
+
+      @include media("<phone") {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0;
+      }
+
+      &:not(:last-child) {
+        @include media("<phone") {
+          padding: 0 0 20px;
+        }
+      }
+
+      &:only-child {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+  }
+
+  .social-networks {
+    font: 300 12px/1.2 $secondary-font-sans-serif;
+    display: block;
+    padding: 15px 0 0;
+
+    @include media("<desktop") {
+      padding: 20px 0 0;
+    }
+
+    @include media("<phone") {
+      padding: 0;
+    }
+
+    li {
+      &:not(:last-child) {
+        margin: 0 0 5px;
+      }
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      border: 1px solid transparent;
+      padding: 5px 8px;
+      color: $white;
+      @include animate(color border-color background, .2s, linear);
+
+      &.facebook {
+        background: #1877f2;
+
+        &:hover,
+        &:focus {
+          color: #1877f2;
+          border-color: #1877f2;
+          background: transparent;
+        }
+      }
+
+      &.google-plus {
+        background: #db4437;
+
+        &:hover,
+        &:focus {
+          color: #db4437;
+          border-color: #db4437;
+          background: transparent;
+        }
+      }
+
+      &.twitter {
+        background: #1da1f2;
+
+        &:hover,
+        &:focus {
+          color: #1da1f2;
+          border-color: #1da1f2;
+          background: transparent;
+        }
+      }
+
+      &.linkedin {
+        background: #007bb5;
+
+        &:hover,
+        &:focus {
+          color: #007bb5;
+          border-color: #007bb5;
+          background: transparent;
+        }
+      }
+    }
+
+    [class^="icon-"],
+    [class*=" icon-"] {
+      font-size: 12px;
+      margin: 0 5px 0 0;
+    }
+  }
+
+  .signup-form {
+    margin: 0 0 20px;
+  }
+}

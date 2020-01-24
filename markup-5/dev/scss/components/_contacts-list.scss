@@ -1,0 +1,33 @@
+/* contacts list styles */
+
+.contacts-list {
+  @extend %listreset;
+  font: 300 18px/1.34 $base-font-sans-serif;
+
+  li {
+    &:not(:last-child) {
+      margin: 0 0 25px;
+    }
+  }
+
+  .tel,
+  .email {
+    display: block;
+  }
+
+  .email {
+    a {
+      display: inline-block;
+      vertical-align: top;
+      border-bottom: 1px solid $black;
+      color: $black;
+      @include animate(color border-bottom-color, .2s, linear);
+
+      &:hover,
+      &:focus {
+        color: $blue;
+        border-bottom-color: $blue;
+      }
+    }
+  }
+}

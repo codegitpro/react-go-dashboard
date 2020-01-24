@@ -1,0 +1,170 @@
+/* modal compare styles */
+
+.modal-compare {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: rgba($blue, .9);
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
+  @include animate(opavity visibility, .2s, linear);
+
+  .modal-compare-content {
+    width: 100%;
+    max-width: 1130px;
+    position: relative;
+    margin: 100px 20px 20px;
+
+    @include media("<phone") {
+      margin: 80px 20px 20px;
+    }
+  }
+
+  .modal-compare-controls {
+    position: absolute;
+    top: -45px;
+    right: -45px;
+    display: flex;
+    align-items: center;
+
+    @include media("<widescreen") {
+      right: 0;
+    }
+  }
+
+  .modal-compare-close {
+    @include size(25px);
+    border-radius: 50%;
+    border: 1px solid $white;
+    margin: 0 0 0 15px;
+    position: relative;
+    overflow: hidden;
+    @include animate(border-color, .2s, linear);
+
+    &:only-child {
+      margin: 0;
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      height: 3px;
+      background: $white;
+      position: absolute;
+      top: 10px;
+      left: 6px;
+      right: 6px;
+      transform: rotate(45deg);
+      border-radius: 2px;
+      @include animate(background, .2s, linear);
+    }
+
+    &:after {
+      transform: rotate(-45deg);
+    }
+
+    &:hover {
+      border-color: rgba($white, .5);
+
+      &:after,
+      &:before {
+        background: rgba($white, .5);
+      }
+    }
+  }
+
+  .modal-compare-hide {
+    font-size: 16px;
+    color: $white;
+
+    [class^="icon-"],
+    [class*=" icon-"] {
+      display: block;
+    }
+
+    &:hover,
+    &:focus {
+      color: rgba($white, .5);
+    }
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -20px;
+
+    @include media("<widescreen") {
+      margin: 0 -10px;
+    }
+
+    @include media("<tablet") {
+      display: block;
+      margin: 0;
+    }
+  }
+
+  .col {
+    padding: 0 20px;
+
+    @include media("<widescreen") {
+      padding: 0 10px;
+
+      @include media("<tablet") {
+        padding: 0;
+      }
+    }
+
+    &:not(:first-child) {
+      flex: 1;
+    }
+
+    &:first-child {
+      width: 150px;
+
+      @include media("<tablet") {
+        width: 100%;
+        padding: 0 0 20px;
+      }
+    }
+  }
+
+  .compare-title {
+    font: 400 18px/1.3 $base-font-sans-serif;
+    color: $white;
+    display: block;
+    margin: 0 0 25px;
+
+    @include media("<desktop") {
+      margin: 0 0 20px;
+    }
+
+    @include media("<tablet") {
+      margin: 0 0 15px;
+    }
+  }
+
+  .btn {
+    min-width: 100%;
+    padding: 9px 10px;
+
+    @include media("<tablet") {
+      min-width: 150px;
+    }
+
+    &.btn-warning {
+      &:hover,
+      &:focus {
+        background: $white;
+        color: $orange;
+      }
+    }
+  }
+}

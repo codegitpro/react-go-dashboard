@@ -1,0 +1,17 @@
+/* subscribe form styles */
+
+.subscribe-form {
+  .row-form {
+    &:not(:last-child) {
+      margin: 0 0 10px;
+    }
+
+    &:nth-child(2) {
+      margin: 0 0 20px;
+
+      @include media("<tablet") {
+        margin: 0 0 25px;
+      }
+    }
+  }
+}

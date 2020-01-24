@@ -1,0 +1,54 @@
+/* filters range */
+
+.filters-range {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -5px 20px;
+
+  .filters-range-box {
+    flex: 0 0 63%;
+    max-width: 63%;
+
+    &:first-child {
+      flex: 0 0 37%;
+      max-width: 37%;
+      padding: 0 5px;
+    }
+
+    &:last-child {
+      text-align: right;
+
+      .filters-range-line {
+        > span {
+          left: auto;
+          right: 0;
+        }
+      }
+    }
+  }
+
+  .filters-range-line {
+    height: 8px;
+    background: rgba($white, .3);
+    display: block;
+    margin: 0 0 5px;
+    border-radius: 2px;
+    position: relative;
+
+    > span {
+      border-radius: 2px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      background: $white;
+      cursor: pointer;
+    }
+  }
+
+  .filters-range-amount {
+    font: 300 14px/1.2 $base-font-sans-serif;
+    display: block;
+    color: $white;
+  }
+}

@@ -1,0 +1,80 @@
+/* dl list styles */
+
+.dl-list {
+  @extend %listreset;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+
+  @include media("<widescreen") {
+    margin: 0 -10px;
+  }
+
+  @include media("<desktop") {
+    margin: 0;
+  }
+
+  li {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 15px;
+
+    @include media("<widescreen") {
+      padding: 0 10px;
+    }
+
+    @include media("<desktop") {
+      flex: 0 0 100%;
+      max-width: 100%;
+      padding: 0;
+    }
+
+    &:not(:last-child) {
+      @include media("<desktop") {
+        padding: 0 0 15px;
+      }
+    }
+  }
+
+  dl {
+    @include media("<widescreen") {
+      font-size: 12px;
+    }
+
+    @include media("<desktop") {
+      font-size: 14px;
+    }
+
+    @include media("<phone") {
+      font-size: 12px;
+    }
+
+    dt {
+      @include media("<widescreen") {
+        min-width: 130px;
+      }
+
+      @include media("<desktop") {
+        min-width: 160px;
+      }
+
+      @include media("<phone") {
+        min-width: 130px;
+      }
+    }
+
+    dd {
+      @include media("<widescreen") {
+        font-size: 10px;
+      }
+
+      @include media("<desktop") {
+        font-size: 12px;
+      }
+
+      @include media("<phone") {
+        font-size: 10px;
+      }
+    }
+  }
+}

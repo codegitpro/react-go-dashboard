@@ -1,0 +1,89 @@
+/* diagram section styles */
+
+.diagram-section {
+  padding: 100px 0;
+  background: rgba($gray-light, .56);
+
+  @include media("<desktop") {
+    padding: 45px 0;
+  }
+
+  > .container {
+    max-width: 730px;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin: 0 -30px;
+
+    @include media("<desktop") {
+      margin: 0 -15px;
+    }
+
+    @include media("<tablet") {
+      display: block;
+      margin: 0;
+    }
+  }
+
+  .col {
+    flex: 0 0 46%;
+    max-width: 46%;
+    padding: 0 30px;
+
+    @include media("<desktop") {
+      padding: 0 15px;
+    }
+
+    @include media("<tablet") {
+      flex: 0 0 100%;
+      max-width: 100%;
+      padding: 0;
+    }
+
+    &:first-child,
+    &:last-child {
+      flex: 0 0 27%;
+      max-width: 27%;
+
+      @include media("<tablet") {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+
+    &:not(:last-child) {
+      @include media("<tablet") {
+        padding: 0 0 20px;
+      }
+    }
+  }
+
+  .statistics-list {
+    margin: -20px 0 0;
+
+    @include media("<tablet") {
+      margin: 0;
+    }
+  }
+
+  img {
+    margin: 15px auto;
+    display: block;
+
+    @include media("<tablet") {
+      margin: 0 auto;
+    }
+  }
+
+  h2 {
+    font-size: 16px;
+    margin: 0 0 25px;
+
+    @include media("<desktop") {
+      margin: 0 0 15px;
+    }
+  }
+}

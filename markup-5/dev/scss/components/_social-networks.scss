@@ -1,0 +1,29 @@
+/* social networks styles */
+
+.social-networks {
+  @extend %listreset;
+  display: flex;
+  align-items: center;
+
+  li {
+    &:not(:last-child) {
+      margin: 0 15px 0 0;
+    }
+  }
+
+  a {
+    display: block;
+    color: $white;
+
+    &:hover,
+    &:focus {
+      color: rgba($white, .5);
+    }
+  }
+
+  [class^="icon-"],
+  [class*=" icon-"] {
+    font-size: 18px;
+    display: block;
+  }
+}

@@ -1,0 +1,31 @@
+/* header section styles */
+
+.header-section {
+  line-height: (24px/14px);
+  text-align: center;
+  margin: 0 0 60px;
+
+  @include media("<desktop") {
+    margin: 0 0 40px;
+  }
+
+  h1 {
+    font-size: 36px;
+    line-height: (48px/36px);
+    margin: 0 0 20px;
+
+    @include media("<desktop") {
+      font-size: 30px;
+      margin: 0 0 10px;
+    }
+
+    small {
+      font-size: inherit;
+      display: block;
+    }
+
+    &:only-child {
+      margin: 0;
+    }
+  }
+}

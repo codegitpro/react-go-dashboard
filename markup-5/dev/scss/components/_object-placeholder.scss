@@ -1,0 +1,28 @@
+/* object placeholder styles */
+
+.object-placeholder {
+  position: relative;
+  padding-bottom: 89.8%;
+  border-radius: 2px;
+  border: 1px dashed $white;
+
+  @include media("<tablet") {
+    padding-bottom: 100%;
+  }
+
+  @include media("<phone") {
+    padding-bottom: 83.7%;
+  }
+
+  .object-placeholder-title {
+    @include vertical-align-el;
+    font: 300 14px/1.3 $base-font-sans-serif;
+    color: $white;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include media("<desktop") {
+      font-size: 12px;
+    }
+  }
+}

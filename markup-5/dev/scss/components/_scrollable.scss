@@ -1,0 +1,73 @@
+/* scrollable styles */
+
+.scrollable-wrapper {
+  position: relative;
+  padding: 0 26px 0 0;
+  height: 325px;
+
+  @include media("<desktop") {
+    height: 305px;
+  }
+
+  @include media("<tablet") {
+    height: 170px;
+  }
+
+  @include media("<phone") {
+    height: 165px;
+  }
+
+  .scrollable {
+    overflow: hidden;
+    height: 325px;
+
+    @include media("<desktop") {
+      height: 305px;
+    }
+
+    @include media("<tablet") {
+      height: 170px;
+    }
+
+    @include media("<phone") {
+      height: 165px;
+    }
+  }
+
+  .scrollbar-vertical {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 6px;
+    background: rgba($white, .3);
+    border-radius: 2px;
+  }
+
+  .scrollbar-slider {
+    height: 325px;
+
+    @include media("<desktop") {
+      height: 305px;
+    }
+
+    @include media("<tablet") {
+      height: 170px;
+    }
+
+    @include media("<phone") {
+      height: 165px;
+    }
+  }
+
+  .scrollbar-handle {
+    @include size(6px, 30px);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    background: $white;
+    cursor: pointer;
+  }
+}

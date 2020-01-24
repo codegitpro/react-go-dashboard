@@ -1,0 +1,25 @@
+/* content holder styles */
+
+.content-holder {
+  &:not(:last-child) {
+    margin: 0 0 125px;
+
+    @include media("<desktop") {
+      margin: 0 0 80px;
+    }
+
+    @include media("<tablet") {
+      margin: 0 0 40px;
+    }
+  }
+
+  .content-inner {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+
+    @include media("<tablet") {
+      display: block;
+    }
+  }
+}

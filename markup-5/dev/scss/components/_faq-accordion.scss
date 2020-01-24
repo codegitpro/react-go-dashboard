@@ -1,0 +1,71 @@
+/* faq accordion styles */
+
+.faq-accordion {
+  @extend %listreset;
+
+  > li {
+    border-bottom: 1px solid rgba($gray, .5);
+
+    &.active {
+      .opener {
+        [class^="icon-"],
+        [class*=" icon-"] {
+          transform: translateY(-50%) rotate(-90deg);
+        }
+      }
+    }
+  }
+
+  h3 {
+    font: 300 14px/1.2 $base-font-serif;
+    margin: 0;
+  }
+
+  h4 {
+    font: 300 24px/1.2 $base-font-sans-serif;
+    margin: 0;
+  }
+
+  .opener {
+    display: block;
+    color: $black;
+    padding: 8px 25px 8px 18px;
+    position: relative;
+
+    &:hover {
+      color: $blue;
+
+      &:before {
+        background: $blue;
+      }
+
+      [class^="icon-"],
+      [class*=" icon-"] {
+        color: $blue;
+      }
+    }
+
+    &:before {
+      @include size(7px, 1px);
+      content: '';
+      background: $black;
+      position: absolute;
+      top: 16px;
+      left: 6px;
+      @include animate(background, .2s, linear);
+    }
+
+    [class^="icon-"],
+    [class*=" icon-"] {
+      position: absolute;
+      top: 50%;
+      right: 8px;
+      transform: translateY(-50%);
+      font-size: 8px;
+    }
+  }
+
+  .slide {
+    padding: 20px;
+  }
+}

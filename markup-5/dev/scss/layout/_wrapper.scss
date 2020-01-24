@@ -1,0 +1,14 @@
+/* wrapper styles */
+
+.wrapper {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+
+  .wrapper-entry {
+    display: flex;
+    flex-flow: column nowrap;
+    min-height: 100vh;
+  }
+}

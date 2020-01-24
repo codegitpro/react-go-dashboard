@@ -1,0 +1,94 @@
+/* welcome block styles */
+
+.welcome-block {
+  font: 400 14px/1.2 $base-font-sans-serif;
+  margin: 0 0 0 15px;
+
+  @include media("<desktop") {
+    margin: 0 0 0 10px;
+  }
+
+  @include media("<tablet") {
+    display: none;
+  }
+
+  ul {
+    @extend %listreset;
+
+    li {
+      &:not(:last-child) {
+        margin: 0 0 5px;
+      }
+    }
+
+    a {
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: center;
+      color: $white;
+
+      .home & {
+        color: $blue;
+      }
+
+      &.signup-btn {
+        font-size: 13px;
+        letter-spacing: 0.05em;
+
+        &:hover,
+        &:focus {
+          color: rgba($white, .5);
+
+          .home & {
+            color: rgba($blue, .5);
+          }
+        }
+
+        .icon-search,
+        .icon-arrow-right {
+          letter-spacing: normal;
+        }
+
+        .icon-search {
+          font-size: 10px;
+          margin: 0 8px 0 0;
+        }
+
+        .icon-arrow-right {
+          font-size: 8px;
+          margin: 0 0 0 3px;
+        }
+      }
+
+      &.login-btn {
+        justify-content: center;
+        letter-spacing: 0.03em;
+        min-width: 100px;
+        border: 1px solid $white;
+        border-radius: 2px;
+        padding: 8px 5px;
+        @include animate(color background, .2s, linear);
+
+        .home & {
+          border-color: $blue;
+        }
+
+        &:hover,
+        &:focus {
+          background: $white;
+          color: $blue;
+
+          .home & {
+            background: $blue;
+            color: $white;
+          }
+        }
+
+        .icon-user {
+          font-size: 12px;
+          margin: 0 0 0 10px;
+        }
+      }
+    }
+  }
+}

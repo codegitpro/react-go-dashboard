@@ -1,0 +1,103 @@
+/* object dropdown styles */
+
+.object-dropdown-wrap {
+  position: relative;
+  margin: 0 0 0 3px;
+
+  &:hover {
+    .object-dropdown-holder {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  > a {
+    display: block;
+    font-size: 10px;
+    color: $blue;
+
+    [class^="icon-"],
+    [class*=" icon-"] {
+      display: block;
+    }
+  }
+
+  .object-dropdown-holder {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 0 5px;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 10;
+    @include animate(opacity visibility, .2s, linear);
+  }
+
+  .object-dropdown-inner {
+    background: #ebebeb;
+    border-radius: 2px;
+    width: 80px;
+    padding: 7px;
+
+    &.object-dropdown-inner-middle {
+      width: 100px;
+    }
+
+    &.object-dropdown-inner-large {
+      width: 150px;
+    }
+  }
+
+  .object-dropdown-title {
+    font: 700 10px/1.2 $secondary-font-sans-serif;
+    color: $black;
+    display: block;
+    margin: 0 0 5px;
+  }
+
+  dl {
+    font: 400 10px/1.2 $secondary-font-sans-serif;
+    color: $black;
+    margin: 0 0 10px;
+
+    &:last-child {
+      margin: 0;
+    }
+
+    dt, dd {
+      padding: 0;
+    }
+
+    dt {
+      padding-right: 3px;
+      min-width: 0;
+    }
+
+    dd {
+      font-size: 10px;
+    }
+  }
+
+  ul {
+    @extend %listreset;
+    font: 400 10px/1.2 $secondary-font-sans-serif;
+    color: $black;
+
+    li {
+      display: flex;
+      align-items: center;
+
+      &:not(:last-child) {
+        margin: 0 0 2px;
+      }
+    }
+
+    .circle {
+      @include size(8px);
+      display: block;
+      border-radius: 50%;
+      margin: 0 5px 0 0;
+    }
+  }
+}

@@ -1,0 +1,158 @@
+/* navigation styles */
+
+.nav {
+  .nav-drop {
+    display: flex;
+    align-items: center;
+
+    @include media("<tablet") {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 100px 20px;
+      height: 100vh;
+      display: block;
+      overflow-y: auto;
+      background: rgba($blue, .9);
+      transform: translateX(100%);
+      z-index: 10;
+      @include animate(transform, .2s, linear);
+    }
+
+    .nav-active & {
+      @include media("<tablet") {
+        transform: translateX(0);
+      }
+    }
+  }
+}
+
+/* navigation primary styles */
+
+.nav-primary {
+  @extend %listreset;
+  font: 400 14px/1.2 $base-font-sans-serif;
+  letter-spacing: 0.05em;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 15px 0 0;
+
+  @include media("<desktop") {
+    margin: 0 10px 0 0;
+  }
+
+  @include media("<tablet") {
+    display: block;
+    margin: 0 0 20px;
+  }
+
+  li {
+    @include media("<tablet") {
+      border-bottom: 1px solid $white;
+    }
+
+    &:not(:last-child) {
+      margin: 0 15px 0 0;
+
+      @include media("<desktop") {
+        margin: 0 10px 0 0;
+      }
+
+      @include media("<tablet") {
+        margin: 0;
+      }
+    }
+
+    &.active,
+    &:hover {
+      a {
+        color: rgba($white, .5);
+
+        .home & {
+          color: rgba($blue, .5);
+
+          @include media("<tablet") {
+            color: rgba($white, .5);
+          }
+        }
+      }
+    }
+  }
+
+  a {
+    color: $white;
+    display: block;
+
+    @include media("<tablet") {
+      padding: 10px 10px;
+    }
+
+    .home & {
+      color: $blue;
+
+      @include media("<tablet") {
+        color: $white;
+      }
+    }
+  }
+}
+
+/* navigation opener styles */
+
+.nav-opener {
+  @include size(34px, 26px);
+  position: relative;
+  overflow: hidden;
+  z-index: 20;
+  display: none;
+
+  span,
+  &:before,
+  &:after {
+    content: '';
+    background: $white;
+    height: 3px;
+    position: absolute;
+    top: 12px;
+    left: 0;
+    right: 0;
+    font-size: 0;
+    line-height: 0;
+    @include animate(background opacity visibility, .2s, linear);
+
+    .home & {
+      background: $blue;
+    }
+  }
+
+  span {
+    .nav-active & {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  &:before,
+  &:after {
+    top: 0;
+
+    .nav-active & {
+      top: 12px;
+      transform: rotate(45deg)
+    }
+  }
+
+  &:after {
+    top: 23px;
+
+    .nav-active & {
+      transform: rotate(-45deg);
+    }
+  }
+
+  @include media("<tablet") {
+    display: block;
+  }
+}

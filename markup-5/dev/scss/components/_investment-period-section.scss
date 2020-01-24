@@ -1,0 +1,17 @@
+/* investment period section styles */
+
+.investment-period-section {
+  padding: 85px 0 65px;
+
+  @include media("<desktop") {
+    padding: 45px 0 25px;
+  }
+
+  > .container {
+    max-width: $secondary-max-width;
+  }
+
+  .header-section {
+    margin: 0 0 25px;
+  }
+}

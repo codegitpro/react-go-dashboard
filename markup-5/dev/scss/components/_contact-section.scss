@@ -1,0 +1,63 @@
+/* contact section styles */
+
+.contact-section {
+  margin: 0 0 100px;
+
+  @include media("<desktop") {
+    margin: 0 0 65px;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -30px;
+
+    @include media("<desktop") {
+      display: block;
+      margin: 0;
+    }
+  }
+
+  .col {
+    padding: 0 30px;
+
+    @include media("<desktop") {
+      padding: 0;
+    }
+
+    &:not(:first-child) {
+      flex: 1;
+    }
+
+    &:first-child {
+      width: 200px;
+
+      @include media("<desktop") {
+        width: auto;
+        padding: 0 0 20px;
+      }
+    }
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  h2 {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 15px 0;
+
+    @include media("<desktop") {
+      margin: 0 0 15px;
+    }
+  }
+
+  .contacts-list {
+    max-width: 250px;
+
+    @include media("<desktop") {
+      max-width: none;
+    }
+  }
+}

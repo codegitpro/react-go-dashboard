@@ -1,0 +1,35 @@
+/* two col styles */
+
+.two-col {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -5px 30px;
+
+  @include media("<desktop") {
+    display: block;
+    margin: 0 0 15px;
+  }
+
+  .col {
+    flex: 0 0 29%;
+    max-width: 29%;
+    padding: 0 5px;
+
+    @include media("<desktop") {
+      flex: 0 0 100%;
+      max-width: 100%;
+      padding: 0;
+    }
+
+    &:first-child {
+      flex: 0 0 71%;
+      max-width: 71%;
+
+      @include media("<desktop") {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0 0 15px;
+      }
+    }
+  }
+}

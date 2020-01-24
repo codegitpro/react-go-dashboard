@@ -1,0 +1,82 @@
+$breakpoints: (
+  'xs-phone': 320px,
+  'phone': 480px,
+  'tablet': 768px,
+  'desktop': 1024px,
+  'widescreen': 1260px
+);
+
+// keywords
+$media-expressions: (
+  'screen': 'screen',
+  'print': 'print',
+  'handheld': 'handheld',
+  'landscape': '(orientation: landscape)',
+  'portrait': '(orientation: portrait)',
+  'retina2x': '(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)',
+  'retina3x': '(-webkit-min-device-pixel-ratio: 2.5), (min-resolution: 240dpi)'
+);
+
+// ligatured operators ≥ ≤
+
+// Colors
+$white: #fff;
+$black: #333;
+$gray: #999;
+$gray-light: #f2f2f2;
+$blue: #336699;
+$blue-light: #307fa7;
+$green: #00a651;
+$red: #d63333;
+$orange: #faad19;
+
+$base-font-sans-serif: 'Oxygen', 'Arial', 'Helvetica Neue', 'Helvetica', sans-serif;
+$secondary-font-sans-serif: 'Roboto', 'Arial', 'Helvetica Neue', 'Helvetica', sans-serif;
+$additional-font-sans-serif: 'Lato', 'Arial', 'Helvetica Neue', 'Helvetica', sans-serif;
+$base-font-serif: 'Merriweather', 'Times New Roman', 'Times', 'Baskerville', 'Georgia', serif;
+
+// Body
+$base-text-color: $black !default;
+$base-background-color: $white !default;
+$font-size-base: 14px !default;
+$line-height-base: 1.43 !default;
+$base-font-family: $base-font-serif !default;
+
+$base-min-width: 320px;
+$base-max-width: 1030px;
+$secondary-max-width: 1160px;
+
+// Liks
+$base-link-color: $blue;
+$base-link-hover: $black;
+
+// Buttons
+$btn-color: $white !default;
+$btn-background: $black !default;
+$btn-padding: 10px 15px !default;
+$btn-font-size: inherit !default;
+$btn-line-height: 1 !default;
+
+// Forms
+$form-element-padding: 10px 7px !default;
+$form-element-color: $black;
+$form-element-background: rgba($gray, .1);
+$form-element-border-color: transparent !default;
+$form-element-focus-border-color: $blue !default;
+$placeholder-color: $black !default;
+
+// Headers
+$h1-font-size: 36px !default;
+$h2-font-size: 32px !default;
+$h3-font-size: 28px !default;
+$h4-font-size: 24px !default;
+$h5-font-size: 20px !default;
+$h6-font-size: 16px !default;
+
+$headings-font-family: $base-font-sans-serif !default;
+$headings-color: $black !default;
+
+// font-family: 'Merriweather', serif;
+// font-family: 'Oxygen', sans-serif;
+// font-family: 'Roboto', sans-serif;
+// font-family: 'Lato', sans-serif;

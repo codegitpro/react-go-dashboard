@@ -1,0 +1,33 @@
+/* map section styles */
+
+.map-section {
+  height: 445px;
+  overflow: hidden;
+  position: relative;
+
+  @include media("<desktop") {
+    height: 345px;
+  }
+
+  @include media("<tablet") {
+    height: 300px;
+  }
+
+  iframe {
+    @include size(100%, 445px);
+
+    @include media("<desktop") {
+      height: 345px;
+    }
+
+    @include media("<tablet") {
+      height: 300px;
+    }
+  }
+
+  img {
+    @include vertical-align-el;
+    width: 100%;
+    z-index: -1;
+  }
+}
